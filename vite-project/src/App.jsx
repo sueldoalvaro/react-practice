@@ -1,20 +1,21 @@
-import MovieCard from './components/MovieCard'
+import { Routes, Route } from "react-router-dom"
 import './App.css'
-
-const movieData = {
-  title: "Titanic",
-  release_date: "1997",
-  img: "./assets/hero.png"
-}
-
+import Home from "./pages/Home";
+import Favorites from "./pages/Favorites"
+import NavigationBar from "./components/NavigationBar";
 function App() {
 
   return (
-    <div>
-      <MovieCard movie={movieData}></MovieCard>
-      <MovieCard movie={{ title: "Pulp Fiction", release_date: "1994", img: "./assets/hero.png" }}></MovieCard>
-      <MovieCard movie={{ title: "The Matrix", release_date: "1999", img: "./assets/hero.png" }}></MovieCard>
-    </div>
+    <>
+      <NavigationBar />
+      <main className='main-content'>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/favorites" element={<Favorites />}></Route>
+        </Routes>
+      </main>
+    </>
+
   )
 }
 
