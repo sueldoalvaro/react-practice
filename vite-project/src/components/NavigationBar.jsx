@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
+import '../css/Navbar.css'
 function NavigationBar() {
     return (
-        <nav className="navigation-bar">
+        <nav className="navbar">
             <div className="navbar-brand">
                 <Link to="/">Movies</Link>
             </div>
